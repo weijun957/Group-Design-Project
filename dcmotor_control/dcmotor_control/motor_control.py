@@ -19,27 +19,27 @@ class MotorControl(Node):
             self.get_logger().info('Forward')
             self.rwheel.forward(1)
             self.lwheel.forward(1)
-            sleep(1)
+            sleep(0.05)
         elif(linear_x<0 and angular_z==0):
             self.get_logger().info('Backward')
             self.rwheel.backward(1)
             self.lwheel.backward(1)
-            sleep(1)
+            sleep(0.05)
         elif(linear_x==0 and angular_z==0):
             self.get_logger().info('Stop')
             self.rwheel.stop()
             self.lwheel.stop()
-            sleep(1)
+            sleep(0.05)
         elif(linear_x==0 and angular_z>0):
             self.get_logger().info('Left')
             self.rwheel.forward(1)
             self.lwheel.backward(1)
-            sleep(1)
+            sleep(0.05)
         elif(linear_x==0 and angular_z<0):
             self.get_logger().info('Right')
             self.lwheel.forward(1)
             self.rwheel.backward(1)
-            sleep(1)
+            sleep(0.05)
         self.rwheel.close()
         self.lwheel.close()
 
